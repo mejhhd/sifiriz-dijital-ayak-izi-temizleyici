@@ -1,0 +1,952 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<!-- htmlaunch:enhanced:v2 -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22hsl(115%2C72%25%2C58%25)%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22hsl(145%2C72%25%2C44%25)%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2246%22%20text-anchor%3D%22middle%22%20font-family%3D%22ui-sans-serif%2Csystem-ui%2C-apple-system%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22800%22%20fill%3D%22%23ffffff%22%3ES%3C%2Ftext%3E%3C%2Fsvg%3E">
+<link rel="canonical" href="https://mejhhd.github.io/sifiriz-dijital-ayak-izi-temizleyici/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SIFIRİZ — Dijital Ayak İzi Temizleyici">
+<meta property="og:title" content="SIFIRİZ — Dijital Ayak İzi Temizleyici">
+<meta property="og:description" content="Tarayıcındaki dijital ayak izini tara, ölç, sıfırla. %100 yerel çalışır.">
+<meta property="og:url" content="https://mejhhd.github.io/sifiriz-dijital-ayak-izi-temizleyici/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fmejhhd.github.io%2Fsifiriz-dijital-ayak-izi-temizleyici%2F?w=1200&h=630">
+<meta property="og:image:alt" content="SIFIRİZ — Dijital Ayak İzi Temizleyici">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SIFIRİZ — Dijital Ayak İzi Temizleyici">
+<meta name="twitter:description" content="Tarayıcındaki dijital ayak izini tara, ölç, sıfırla. %100 yerel çalışır.">
+<meta name="twitter:image" content="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fmejhhd.github.io%2Fsifiriz-dijital-ayak-izi-temizleyici%2F?w=1200&h=630">
+<meta name="twitter:image:alt" content="SIFIRİZ — Dijital Ayak İzi Temizleyici">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1416">
+<meta name="color-scheme" content="dark">
+<meta name="referrer" content="no-referrer">
+<title>SIFIRİZ — Dijital Ayak İzi Temizleyici</title>
+<meta name="description" content="Tarayıcındaki dijital ayak izini tara, ölç, sıfırla. %100 yerel çalışır.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b1416; --panel:#101f24; --panel2:#142830; --line:#1f3a43; --line2:#2d525d;
+  --ink:#e8f3f0; --dim:#8aa5a2;
+  --amber:#ffb454; --red:#ff5d5d; --cyan:#57d3d9; --green:#69e08a;
+  --fd:'Bricolage Grotesque',sans-serif; --fb:'IBM Plex Sans',sans-serif; --fm:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);font-size:15.5px;line-height:1.55;overflow-x:hidden}
+::selection{background:var(--amber);color:#171006}
+
+/* ---------- katmanlı arka plan ---------- */
+.bg-grid{position:fixed;inset:0;z-index:-3;background:
+  linear-gradient(rgba(120,180,190,.045) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(120,180,190,.045) 1px,transparent 1px);
+  background-size:44px 44px;mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 40%,transparent 100%)}
+.bg-glow{position:fixed;z-index:-2;border-radius:50%;filter:blur(90px);pointer-events:none;will-change:transform}
+.g1{width:56vw;height:56vw;left:-14vw;top:-18vw;background:rgba(255,180,84,.09);animation:drift1 26s ease-in-out infinite alternate}
+.g2{width:48vw;height:48vw;right:-12vw;bottom:-16vw;background:rgba(87,211,217,.08);animation:drift2 32s ease-in-out infinite alternate}
+@keyframes drift1{to{transform:translate(9vw,6vh)}}
+@keyframes drift2{to{transform:translate(-8vw,-5vh)}}
+.scan-beam{position:fixed;left:0;right:0;top:0;height:140px;z-index:-1;pointer-events:none;will-change:transform;
+  background:linear-gradient(180deg,transparent,rgba(87,211,217,.05),transparent);animation:beam 11s linear infinite}
+@keyframes beam{from{transform:translateY(-160px)}to{transform:translateY(110vh)}}
+
+/* ---------- komut çubuğu ---------- */
+.topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:12px 26px;background:rgba(11,20,22,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:11px}
+.brand svg{width:30px;height:30px;color:var(--amber);transform:rotate(-14deg)}
+.brand .wm{font-family:var(--fd);font-weight:800;font-size:21px;letter-spacing:.02em}
+.brand .wm b{color:var(--amber);font-weight:800}
+.brand .tag{font-family:var(--fm);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-left:4px}
+.top-meta{display:flex;align-items:center;gap:10px;font-family:var(--fm);font-size:11.5px}
+.badge{padding:4px 9px;border:1px solid var(--line2);border-radius:4px;color:var(--dim);white-space:nowrap}
+.badge.priv{color:var(--green);border-color:rgba(105,224,138,.4)}
+.led{display:flex;align-items:center;gap:7px;color:var(--ink)}
+.led i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.clock{color:var(--dim);letter-spacing:.08em}
+
+main{max-width:1180px;margin:0 auto;padding:0 26px}
+
+/* ---------- başlık + konsol ---------- */
+.console-section{padding:52px 0 30px}
+.console-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:26px;flex-wrap:wrap}
+.kicker{font-family:var(--fm);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+.kicker b{color:var(--amber);font-weight:600}
+h1{font-family:var(--fd);font-weight:800;font-size:clamp(30px,4.6vw,52px);line-height:1.04;letter-spacing:-.01em;margin-top:10px;max-width:15ch}
+h1 .hl{color:var(--amber)}
+.console-sub{max-width:36ch;color:var(--dim);font-size:14.5px;padding-bottom:6px}
+
+.console-grid{display:grid;grid-template-columns:1.62fr 1fr;gap:16px;align-items:start}
+.chamfer{clip-path:polygon(0 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%)}
+.panel{background:var(--panel);border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+.console-panel{padding:0 0 18px}
+.panel-top{display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid var(--line);background:rgba(0,0,0,.18)}
+.dot{width:9px;height:9px;border-radius:50%}
+.r1{background:var(--red)}.r2{background:var(--amber)}.r3{background:var(--green)}
+.panel-title{font-size:12px;color:var(--dim);letter-spacing:.06em;margin-left:6px}
+.radar{margin-left:auto;width:44px;height:44px;border-radius:50%;border:1px solid var(--line2);position:relative;overflow:hidden;
+  background:radial-gradient(circle,rgba(87,211,217,.1),transparent 72%)}
+.radar::before,.radar::after{content:'';position:absolute;background:rgba(87,211,217,.18)}
+.radar::before{left:0;right:0;top:50%;height:1px}
+.radar::after{top:0;bottom:0;left:50%;width:1px}
+.radar i{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(87,211,217,.55),transparent 28%);
+  animation:spin 3.2s linear infinite;transition:opacity .4s}
+.radar b{position:absolute;left:50%;top:50%;width:5px;height:5px;margin:-2.5px;border-radius:50%;background:var(--cyan)}
+.radar.idle i{animation-play-state:paused;opacity:.18}
+.radar.scan i{animation-duration:.7s}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.log{height:196px;overflow-y:auto;margin:14px;background:#0a1214;border:1px solid var(--line);padding:12px 14px;
+  font-family:var(--fm);font-size:12.5px;line-height:1.9;scrollbar-width:thin;scrollbar-color:var(--line2) transparent}
+.log::-webkit-scrollbar{width:5px}.log::-webkit-scrollbar-thumb{background:var(--line2)}
+.log:empty::before{content:'» sistem boşta — "Tarayıcıyı Tara" ile başla';color:#40616b}
+.l{color:var(--dim)}.l .lp{margin-right:8px;color:var(--line2)}
+.l.sys{color:#a8e6ea}.l.sys .lp{color:var(--cyan)}
+.l.ok{color:#9fe0b0}.l.ok .lp{color:var(--green)}
+.l.warn{color:#ffd9a0}.l.warn .lp{color:var(--amber)}
+.l.bad{color:#ffb0b0}.l.bad .lp{color:var(--red)}
+
+.actions{display:flex;gap:12px;flex-wrap:wrap;padding:0 14px}
+.btn{font-family:var(--fd);font-weight:700;font-size:15px;letter-spacing:.02em;border:0;border-radius:5px;
+  padding:13px 20px;cursor:pointer;transition:transform .15s,box-shadow .15s,background .2s,color .2s,border-color .2s}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+.btn-primary{background:var(--amber);color:#171006;box-shadow:0 5px 0 #7c5218}
+.btn-primary:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 7px 0 #7c5218}
+.btn-primary:active:not(:disabled){transform:translateY(3px);box-shadow:0 1px 0 #7c5218}
+.btn-danger{background:transparent;color:var(--red);border:1.5px solid var(--red);box-shadow:0 5px 0 rgba(126,31,31,.0)}
+.btn-danger:disabled{border-color:var(--line2);color:var(--line2)}
+.btn-danger:not(:disabled){background:var(--red);color:#200505;box-shadow:0 5px 0 #7e1f1f}
+.btn-danger:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 7px 0 #7e1f1f}
+.btn-danger:active:not(:disabled){transform:translateY(3px);box-shadow:0 1px 0 #7e1f1f}
+.btn-ghost{background:transparent;border:1px solid var(--line2);color:var(--dim)}
+.btn-ghost:hover:not(:disabled){color:var(--ink);border-color:var(--cyan)}
+.btn:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+
+/* ---------- delil listesi ---------- */
+.evidence{margin:18px 14px 0}
+.ev-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px dashed var(--line2);padding-bottom:8px;margin-bottom:12px}
+.ev-head h3{font-family:var(--fd);font-weight:700;font-size:17px;letter-spacing:.02em}
+.ev-head span{font-size:11px;color:var(--dim);letter-spacing:.1em}
+.ev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:10px}
+.ev-card{background:var(--panel2);border:1px solid var(--line);border-left:3px solid var(--acc,var(--line2));
+  border-radius:6px;padding:11px 12px;opacity:0;transform:translateY(12px);transition:opacity .45s,transform .45s,border-color .2s,box-shadow .2s}
+.ev-card.in{opacity:1;transform:none}
+.ev-card:hover{border-color:var(--line2);box-shadow:0 6px 18px rgba(0,0,0,.35);transform:translateY(-2px)}
+.ev-top{display:flex;align-items:center;gap:8px}
+.ev-chip{font-size:10.5px;font-weight:600;letter-spacing:.08em;color:var(--acc,var(--dim));border:1px solid currentColor;
+  border-radius:3px;padding:1px 6px}
+.ev-name{font-weight:600;font-size:13.5px}
+.ev-st{margin-left:auto;font-family:var(--fm);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--dim)}
+.ev-st.ok{color:var(--green)}.ev-st.warn{color:var(--amber)}
+.ev-det{font-size:12px;color:var(--dim);margin:7px 0 9px;min-height:34px;line-height:1.45;word-break:break-word}
+.ev-bot{display:flex;justify-content:space-between;font-family:var(--fm);font-size:11.5px;color:var(--ink)}
+.ev-bot span:last-child{color:var(--dim)}
+
+/* ---------- sağ ray: skor + özet ---------- */
+.rail{display:grid;gap:16px}
+.gauge-panel{--gcol:var(--amber);position:relative;padding:22px 22px 18px;text-align:center}
+.gauge-panel h3{font-family:var(--fd);font-weight:700;font-size:16px;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
+.gauge-wrap{position:relative;width:172px;margin:0 auto}
+.gauge{width:172px;height:172px;display:block}
+.g-bg{fill:none;stroke:var(--line);stroke-width:10}
+.g-fg{fill:none;stroke:var(--gcol);stroke-width:10;stroke-linecap:round;stroke-dasharray:402.1;stroke-dashoffset:402.1;
+  transform:rotate(-90deg);transform-origin:center;transition:stroke-dashoffset 1.1s cubic-bezier(.2,.8,.2,1),stroke .6s}
+.g-num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:var(--fd);font-weight:800;font-size:48px;color:var(--gcol);transition:color .6s}
+.g-label{margin-top:12px;font-family:var(--fd);font-weight:700;font-size:15px;letter-spacing:.18em;color:var(--dim)}
+.g-note{margin-top:12px;font-size:11.5px;color:var(--dim);line-height:1.5}
+.stamp{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%) rotate(-8deg) scale(1.7);opacity:0;pointer-events:none;
+  border:3px solid var(--red);color:var(--red);border-radius:6px;padding:8px 14px;text-align:center;
+  font-family:var(--fd);font-weight:800;letter-spacing:.1em;line-height:1.25;transition:.45s cubic-bezier(.18,1.6,.3,1)}
+.stamp::after{content:'';position:absolute;inset:3px;border:1px solid var(--red);border-radius:3px}
+.stamp.show{opacity:.92;transform:translate(-50%,-50%) rotate(-8deg) scale(1)}
+.st-top{font-size:19px;display:block}
+.st-mid{font-family:var(--fm);font-size:11px;font-weight:400;display:block;letter-spacing:.05em}
+.st-bot{font-size:9px;display:block;letter-spacing:.14em;opacity:.85}
+.stats-panel{padding:18px 20px}
+.stats-panel h3{font-family:var(--fd);font-weight:700;font-size:16px;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:12px}
+.stats{list-style:none}
+.stats li{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--line)}
+.stats li:last-child{border:0}
+.stats span{font-size:13px;color:var(--dim)}
+.stats b{font-family:var(--fm);font-size:14px;font-weight:600}
+
+/* ---------- bölüm başlıkları ---------- */
+section.blk{padding:64px 0 0}
+.blk-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:24px}
+.blk-head h2{font-family:var(--fd);font-weight:800;font-size:clamp(24px,3.2vw,38px);letter-spacing:-.01em;margin-top:8px;max-width:22ch}
+.blk-head p{color:var(--dim);max-width:44ch;font-size:14px}
+.rev{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.rev.in{opacity:1;transform:none}
+
+/* ---------- parmak izi sinyalleri ---------- */
+.sig-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:12px}
+.sig-card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:15px 15px 13px;
+  opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s,border-color .2s,box-shadow .2s}
+.sig-card.in{opacity:1;transform:none}
+.sig-card:hover{border-color:var(--line2);transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.35)}
+.sig-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:9px}
+.sig-name{font-weight:600;font-size:13.5px}
+.risk{font-family:var(--fm);font-size:10px;letter-spacing:.08em;padding:2px 8px;border-radius:99px;border:1px solid;white-space:nowrap}
+.risk.low{color:var(--green);border-color:rgba(105,224,138,.45);background:rgba(105,224,138,.08)}
+.risk.med{color:var(--amber);border-color:rgba(255,180,84,.45);background:rgba(255,180,84,.08)}
+.risk.high{color:var(--red);border-color:rgba(255,93,93,.5);background:rgba(255,93,93,.09)}
+.sig-val{font-family:var(--fm);font-size:13px;color:var(--ink);word-break:break-all;min-height:18px}
+.sig-card small{display:block;margin-top:9px;font-size:12px;color:var(--dim);line-height:1.5}
+.sig-empty{grid-column:1/-1;color:var(--dim);border:1px dashed var(--line2);border-radius:8px;padding:26px;text-align:center;font-family:var(--fm);font-size:12.5px}
+
+/* ---------- kılavuz ---------- */
+.guide-wrap{display:grid;grid-template-columns:235px 1fr;gap:16px;align-items:start}
+.tabs{display:flex;flex-direction:column;gap:6px;position:sticky;top:84px}
+.vtab{display:flex;justify-content:space-between;align-items:center;gap:10px;text-align:left;background:var(--panel);
+  border:1px solid var(--line);border-left:3px solid transparent;border-radius:6px;padding:12px 14px;cursor:pointer;
+  color:var(--dim);font-family:var(--fb);font-size:14.5px;font-weight:600;transition:.2s}
+.vtab i{font-style:normal;font-size:11px;color:var(--dim)}
+.vtab:hover{border-color:var(--line2);color:var(--ink)}
+.vtab.on{border-left-color:var(--amber);background:var(--panel2);color:var(--ink)}
+.vtab.on i{color:var(--amber)}
+.guide-body{background:var(--panel);border:1px solid var(--line);padding:20px 22px 12px;min-height:420px}
+.gprog{margin-bottom:18px}
+.gprog .row{display:flex;justify-content:space-between;font-family:var(--fm);font-size:11.5px;color:var(--dim);margin-bottom:7px}
+.gprog .row b{color:var(--amber);font-weight:600}
+.gbar{height:6px;background:var(--line);border-radius:99px;overflow:hidden}
+.gbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--amber));transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.steps{list-style:none}
+.step{display:grid;grid-template-columns:22px 1fr auto auto;gap:13px;align-items:center;padding:14px 4px;
+  border-bottom:1px dashed var(--line);cursor:pointer;transition:.2s;border-left:3px solid transparent;padding-left:10px}
+.step:hover{background:rgba(87,211,217,.05);border-left-color:var(--cyan)}
+.step input{position:absolute;opacity:0;pointer-events:none}
+.bx{width:19px;height:19px;border:1.5px solid var(--line2);border-radius:4px;position:relative;transition:.2s;flex:none}
+.step input:checked ~ .bx{background:rgba(105,224,138,.15);border-color:var(--green)}
+.step input:checked ~ .bx::after{content:'✓';position:absolute;inset:0;display:grid;place-items:center;color:var(--green);font-size:12px;font-weight:700}
+.stx b{font-size:14.5px;display:block}
+.stx small{color:var(--dim);font-size:12.5px;display:block;margin-top:2px}
+.step.done .stx b{color:var(--dim)}
+.sl{font-family:var(--fm);font-size:12px;color:var(--cyan);text-decoration:none;white-space:nowrap;transition:.2s}
+.sl:hover{color:var(--amber)}
+.sl.fake{color:var(--line2)}
+.stm{font-size:11px;color:var(--dim);width:52px;text-align:right}
+
+/* ---------- savunma ---------- */
+.def-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.def{display:flex;gap:16px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  padding:16px 18px;transition:.2s}
+.def:hover{border-color:var(--line2);transform:translateY(-2px)}
+.def .n{font-family:var(--fm);font-weight:600;font-size:13px;color:var(--amber);border:1px solid rgba(255,180,84,.4);
+  border-radius:4px;padding:2px 8px;margin-top:2px;flex:none}
+.def b{font-size:14.5px;display:block;margin-bottom:3px}
+.def small{color:var(--dim);font-size:12.5px;line-height:1.5}
+
+/* ---------- dış arama ---------- */
+.osint-section{padding-top:30px}
+.osint-panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 18px 16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+.osint-form{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.osint-field{display:grid;gap:5px}
+.osint-field label{font-family:var(--fm);font-size:11px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase}
+.osint-field input{background:#0a1214;border:1px solid var(--line);color:var(--ink);border-radius:5px;padding:11px 12px;font:500 14px var(--fb);outline:none;transition:border-color .2s;width:100%}
+.osint-field input:focus{border-color:var(--cyan)}
+.osint-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.osint-result{margin-top:16px;display:none}
+.osint-result.on{display:block}
+.os-group{border:1px dashed var(--line2);border-radius:6px;padding:12px;margin-top:10px}
+.os-group h4{font-family:var(--fd);font-size:13px;letter-spacing:.08em;color:var(--amber);margin-bottom:8px;text-transform:uppercase}
+.os-links{display:flex;flex-wrap:wrap;gap:8px}
+.os-link{display:inline-flex;align-items:center;gap:7px;background:var(--panel2);border:1px solid var(--line);color:var(--ink);border-radius:4px;padding:8px 10px;font-size:12.5px;text-decoration:none;transition:.2s;max-width:100%;word-break:break-all}
+.os-link:hover{border-color:var(--cyan);transform:translateY(-1px)}
+.os-link small{color:var(--dim);font-family:var(--fm);font-size:10.5px;white-space:nowrap;max-width:280px;overflow:hidden;text-overflow:ellipsis}
+.os-warn{margin-top:12px;font-size:12px;color:var(--dim);line-height:1.55;border:1px solid rgba(255,180,84,.25);background:rgba(255,180,84,.05);border-radius:6px;padding:10px 12px}
+.os-note{margin-top:8px;font-size:12px;color:var(--dim)}
+
+footer{margin-top:80px;border-top:1px solid var(--line);background:rgba(0,0,0,.2)}
+.foot-in{max-width:1180px;margin:0 auto;padding:34px 26px;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:30px}
+.foot-in h4{font-family:var(--fd);font-weight:700;font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);margin-bottom:9px}
+.foot-in p{font-size:12.5px;color:var(--dim);line-height:1.6}
+.foot-bar{border-top:1px solid var(--line);padding:14px 26px;display:flex;justify-content:space-between;max-width:1180px;margin:0 auto;font-family:var(--fm);font-size:11px;color:var(--dim)}
+
+/* ---------- modal ---------- */
+.modal-back{position:fixed;inset:0;z-index:100;background:rgba(5,10,11,.75);backdrop-filter:blur(4px);
+  display:grid;place-items:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .25s}
+.modal-back.open{opacity:1;pointer-events:auto}
+.modal{background:var(--panel2);border:1px solid var(--line2);max-width:520px;width:100%;padding:26px 28px;
+  transform:translateY(14px);transition:transform .3s}
+.modal-back.open .modal{transform:none}
+.modal h3{font-family:var(--fd);font-weight:800;font-size:22px;margin:8px 0 14px}
+.modal ul{list-style:none;margin-bottom:20px}
+.modal li{font-size:13px;color:var(--dim);padding:7px 0 7px 22px;position:relative;border-bottom:1px dashed var(--line)}
+.modal li::before{content:'!';position:absolute;left:0;color:var(--amber);font-family:var(--fm)}
+.modal-btns{display:flex;justify-content:flex-end;gap:10px}
+
+@media (max-width:960px){
+  .console-grid{grid-template-columns:1fr}
+  .rail{grid-template-columns:1fr 1fr}
+  .guide-wrap{grid-template-columns:1fr}
+  .tabs{flex-direction:row;overflow-x:auto;position:static}
+  .vtab{min-width:150px}
+  .def-grid,.foot-in{grid-template-columns:1fr}
+  .brand .tag{display:none}
+  .osint-form{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .rail{grid-template-columns:1fr}
+  .top-meta .clock,.top-meta .badge.browser{display:none}
+  .stm{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div><div class="bg-glow g1"></div><div class="bg-glow g2"></div><div class="scan-beam"></div>
+
+<header class="topbar">
+  <div class="brand">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <ellipse cx="8.4" cy="14.8" rx="4.7" ry="6.3"/><circle cx="4.2" cy="5.6" r="1.7"/><circle cx="9" cy="4.1" r="1.9"/><circle cx="13.9" cy="4.7" r="1.8"/><circle cx="18.1" cy="6.6" r="1.5"/>
+    </svg>
+    <span class="wm">SIFIR<b>İZ</b></span>
+    <span class="tag">dijital ayak izi temizleyici</span>
+  </div>
+  <div class="top-meta">
+    <span class="badge priv">VERİ TOPLAMAZ · %100 YEREL</span>
+    <span class="badge browser" id="browserBadge">—</span>
+    <span class="led"><i></i><span id="sysState" role="status">HAZIR</span></span>
+    <span class="clock" id="clock">--:--:--</span>
+  </div>
+</header>
+
+<main>
+<!-- ============ 00 DIŞ ARAMA ============ -->
+<section class="blk rev osint-section" id="dis-arama">
+  <div class="blk-head">
+    <div>
+      <p class="kicker"><b>// MODÜL 00</b> — DIŞ İZ ARAŞTIRMASI</p>
+      <h2>Numara, e-posta ve kullanıcı adı dışarıda nerede?</h2>
+    </div>
+    <p>Telefon, Gmail/e-posta veya sosyal kullanıcı adı gir. Sayfa, Google, DuckDuckGo, Bing ve sosyal ağ aramaları için link üretir; veri dışarı göndermez.</p>
+  </div>
+  <div class="osint-panel">
+    <form id="osintForm" novalidate autocomplete="off">
+      <div class="osint-form">
+        <div class="osint-field">
+          <label for="osPhone">Telefon</label>
+          <input id="osPhone" type="text" inputmode="tel" placeholder="+90 5xx xxx xx xx">
+        </div>
+        <div class="osint-field">
+          <label for="osEmail">E-posta / Gmail</label>
+          <input id="osEmail" type="text" placeholder="ornek@gmail.com">
+        </div>
+        <div class="osint-field">
+          <label for="osUser">Kullanıcı adı / handle</label>
+          <input id="osUser" type="text" placeholder="ornek">
+        </div>
+      </div>
+      <div class="osint-actions">
+        <button class="btn btn-primary" id="btnOsSearch" type="button">Arama Linklerini Oluştur</button>
+        <button class="btn btn-ghost" id="btnOsClear" type="button">Temizle</button>
+      </div>
+    </form>
+    <div class="osint-result" id="osResult" aria-live="polite">
+      <div id="osGroups"></div>
+      <div class="os-warn">
+        Bu modül hesap içine girmez; dışarıda görünen izleri aramak için link üretir. Sadece kendi hesabını veya iznin olan kişilerin bilgilerini ara. Benzer/benzer Gmail hesapları, nokta farkları, plus adresleri ve @gmail.com / @googlemail.com benzerlikleri ayrı arama hedefleri oluşturabilir.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01 KONSOL ============ -->
+<section class="console-section" id="konsol">
+  <div class="console-head">
+    <div>
+      <p class="kicker"><b>// MODÜL 01</b> — YEREL TARAMA &amp; SIFIRLAMA</p>
+      <h1>Bu sayfadaki izlerini tara, ölç, <span class="hl">sıfırla.</span></h1>
+    </div>
+    <p class="console-sub">Tarayıcının bu adreste sakladığı çerezler, depolar, önbellek ve parmak izi sinyalleri tek konsolda. Hiçbir veri dışarı gönderilmez.</p>
+  </div>
+  <div class="console-grid">
+    <div class="panel console-panel chamfer">
+      <div class="panel-top">
+        <span class="dot r1"></span><span class="dot r2"></span><span class="dot r3"></span>
+        <span class="panel-title" style="font-family:var(--fm)">izsif@tarayici:~$ tarama</span>
+        <span class="radar idle" id="radar" aria-hidden="true"><i></i><b></b></span>
+      </div>
+      <div class="log mono" id="log" aria-live="polite"></div>
+      <div class="actions">
+        <button class="btn btn-primary" id="btnScan">▶&nbsp; Tarayıcıyı Tara</button>
+        <button class="btn btn-danger" id="btnClean" disabled>✕&nbsp; İzi Sıfırla</button>
+        <button class="btn btn-ghost" id="btnReport" disabled>↓&nbsp; Rapor İndir</button>
+      </div>
+      <div class="evidence" id="evWrap" hidden>
+        <div class="ev-head"><h3>Delil Listesi</h3><span class="mono" id="evCount" style="font-family:var(--fm)"></span></div>
+        <div class="ev-grid" id="evGrid"></div>
+      </div>
+    </div>
+    <aside class="rail">
+      <div class="panel gauge-panel chamfer" id="gaugePanel">
+        <h3>Risk Skoru</h3>
+        <div class="gauge-wrap">
+          <svg class="gauge" viewBox="0 0 160 160" aria-hidden="true">
+            <circle class="g-bg" cx="80" cy="80" r="64"/>
+            <circle class="g-fg" id="gFg" cx="80" cy="80" r="64"/>
+          </svg>
+          <div class="g-num" id="gNum">0</div>
+        </div>
+        <div class="g-label" id="gaugeLabel">BEKLENİYOR</div>
+        <div class="stamp" id="stamp"><span class="st-top">İZ SIFIRLANDI</span><span class="st-mid" id="stampDate">—</span><span class="st-bot">BU TARAYICI · BU OTURUM</span></div>
+        <p class="g-note">Skor = saklanan veri + parmak izi sinyalleri. Sinyaller yazılımdan gelir; çerez silmekle sıfırlanmaz.</p>
+      </div>
+      <div class="panel stats-panel chamfer">
+        <h3>Özet</h3>
+        <ul class="stats">
+          <li><span>Tespit edilen kayıt</span><b id="stItems">0</b></li>
+          <li><span>Yaklaşık boyut</span><b id="stSize">0 B</b></li>
+          <li><span>Silinebilir kategori</span><b id="stClean">—</b></li>
+          <li><span>İz sinyali</span><b id="stSig">—</b></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ 02 SİNYALLER ============ -->
+<section class="blk rev" id="sinyal">
+  <div class="blk-head">
+    <div>
+      <p class="kicker"><b>// MODÜL 02</b> — PARMAK İZİ SİNYALLERİ</p>
+      <h2>Çerez olmasa bile seni tanımlayanlar</h2>
+    </div>
+    <p>Tarama sırasında tarayıcından <b>canlı</b> toplanır. Bunlar izleyicilerin çerezsiz, tekrar tanımanı kullandığı sinyallerdir.</p>
+  </div>
+  <div class="sig-grid" id="sigGrid">
+    <div class="sig-empty">Sinyaller henüz ölçülmedi — üstteki "Tarayıcıyı Tara" düğmesini kullan.</div>
+  </div>
+</section>
+
+<!-- ============ 03 KILAVUZ ============ -->
+<section class="blk rev" id="kilavuz">
+  <div class="blk-head">
+    <div>
+      <p class="kicker"><b>// MODÜL 03</b> — DIŞ TEMİZLİK KILAVUZU</p>
+      <h2>Tarayıcının uzanamadığı yerler</h2>
+    </div>
+    <p>Gerçek izin büyük kısmı platformların sunucularında. Adım adım temizle; yaptıkça işaretle, ilerlemen hatırlanır.</p>
+  </div>
+  <div class="guide-wrap">
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <div class="guide-body">
+      <div class="gprog">
+        <div class="row"><span id="gpTxt">0/0 adım tamamlandı</span><b id="gpPct">%</b></div>
+        <div class="gbar"><i id="gpBar"></i></div>
+      </div>
+      <div class="steps" id="steps"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 SAVUNMA ============ -->
+<section class="blk rev" id="savunma">
+  <div class="blk-head">
+    <div>
+      <p class="kicker"><b>// MODÜL 04</b> — SAVUNMA REÇETESİ</p>
+      <h2>Bir daha iz bırakma</h2>
+    </div>
+    <p>Temizlik bitince izi büyümesini engellemek: sekiz küçük alışkanlık.</p>
+  </div>
+  <div class="def-grid">
+    <div class="def"><span class="n">01</span><div><b>uBlock Origin kur — her cihazda</b><small>İzleyicilerin %90'ından fazlası üçüncü parti script'tir; önce onları ke.</small></div></div>
+    <div class="def"><span class="n">02</span><div><b>Gizlilik dostu arama motoru</b><small>Startpage veya DuckDuckGo: aramalarını Google'ın profiline yedirme.</small></div></div>
+    <div class="def"><span class="n">03</span><div><b>E-postada uzak görselleri kapat</b><small>"Görselleri otomatik yükleme" açıkken her e-posta bir izleme pikselidir.</small></div></div>
+    <div class="def"><span class="n">04</span><div><b>Site başına ayrı kimlik</b><small>Aynı e-posta her yerde = her profil tek profilde birleşir. Ana hesap ayrı, günlük hesap ayrı.</small></div></div>
+    <div class="def"><span class="n">05</span><div><b>2FA — mümkünse passkey</b><small>SMS son çaredir; SIM değiştirmeyle sızdırılır. Fido2/passkey daha güvenli.</small></div></div>
+    <div class="def"><span class="n">06</span><div><b>Özel pencereyi doğru bil</b><small>Sana değil, siteye karşıdır. Asıl koruma ayarlardadır: çerez ömrü, izleme engeli.</small></div></div>
+    <div class="def"><span class="n">07</span><div><b>E-ticarette misafir modu</b><small>Oturum açmadan devam et; her oturum = profil + çerez karması.</small></div></div>
+    <div class="def"><span class="n">08</span><div><b>Yılda bir veri dökümü indir</b><small>Google Takeout / Meta Verilerin: neyin saklandığını kendi gözünle gör, farkı izle.</small></div></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-in">
+    <div><h4>Yerel Çalışır</h4><p>SIFIRİZ hiçbir sunucuya veri göndermez, ağ isteği atmaz, çerez/depoya kendi verisini yazmaz. Tarama ve temizleme tamamen bu sekmede, senin tarayıcında yürür.</p></div>
+    <div><h4>Teknik Sınırlar</h4><p>HttpOnly çerezler ve üçüncü taraf çerezleri sayfadan silinemez; tarayıcının Ayarlar → Gizlilik bölümünden veya Ctrl+Shift+Del ile temizlenir. Modül 03 bunu kapsar.</p></div>
+    <div><h4>Hukuk Notu</h4><p>Platform adımları genel bilgidir; resmi linkler güncellenmiş olabilir. KVKK ve GDPR taleplerinde kurumsal şablonları resmi kaynaklardan doğrula.</p></div>
+  </div>
+  <div class="foot-bar"><span>SIFIRİZ v1.2</span><span>iz bırakmadan iz sil</span></div>
+</footer>
+
+<!-- onay modalı -->
+<div class="modal-back" id="modal">
+  <div class="modal" role="dialog" aria-modal="true">
+    <p class="kicker" style="color:var(--red)"><b style="color:var(--red)">// ONAY GEREKLİ</b></p>
+    <h3>Bu adresteki yerel izleri sil?</h3>
+    <ul>
+      <li>Çerezler (HttpOnly hariç), yerel &amp; oturum depoları, IndexedDB, önbellek ve servis işleyiciler kalıcı silinir.</li>
+      <li>Kimlik oturumların düşer; siteye yeniden giriş gerekir.</li>
+      <li>Kılavuz ilerlemen de bir iz olduğu için sıfırlanır.</li>
+      <li>HttpOnly çerezler bu sayfadan silinemez — tarayıcının Sitelerden ayarından temizlersin.</li>
+    </ul>
+    <div class="modal-btns">
+      <button class="btn btn-ghost" id="mCancel">Vazgeç</button>
+      <button class="btn btn-danger" id="mOk" style="background:var(--red);color:#200505;box-shadow:0 5px 0 #7e1f1f">Sıfırla</button>
+    </div>
+  </div>
+</div>
+
+<noscript><p style="padding:20px">Bu uygulama JavaScript gerektirir.</p></noscript>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const state={busy:false,F:null,score:0,fpScore:0,sig:null};
+const EV={};
+const RISK_TR={low:'düşük',med:'orta',high:'yüksek'};
+
+/* ---------- yardımcılar ---------- */
+function fmtBytes(b){if(b==null)return'—';if(b<1024)return b+' B';if(b<1048576)return(b/1024).toFixed(1)+' KB';return(b/1048576).toFixed(1)+' MB'}
+function hashStr(s){let h=5381;for(let i=0;i<s.length;i++)h=((h<<5)+h+s.charCodeAt(i))>>>0;return h.toString(16).padStart(8,'0')}
+function download(name,text,mime){const b=new Blob([text],{type:mime});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000)}
+
+const logEl=$('#log');
+function log(t,msg){const d=document.createElement('div');d.className='l '+(t||'');d.innerHTML='<span class="lp">»</span>'+esc(msg);logEl.appendChild(d);while(logEl.childElementCount>80)logEl.firstChild.remove();logEl.scrollTop=logEl.scrollHeight}
+
+/* ---------- üst çubuk ---------- */
+const clock=$('#clock');
+setInterval(()=>clock.textContent=new Date().toLocaleTimeString('tr-TR'),1000);
+clock.textContent=new Date().toLocaleTimeString('tr-TR');
+(function(){const ua=navigator.userAgent;let b='Tarayıcı';
+if(/edg\//i.test(ua))b='Edge';else if(/chrome|crios/i.test(ua))b='Chrome';else if(/firefox|fxios/i.test(ua))b='Firefox';else if(/safari/i.test(ua))b='Safari';
+let os='Cihaz';if(/windows/i.test(ua))os='Windows';else if(/iphone|ipad/i.test(ua))os='iOS';else if(/mac os/i.test(ua))os='macOS';else if(/android/i.test(ua))os='Android';else if(/linux/i.test(ua))os='Linux';
+window.D={b,os};$('#browserBadge').textContent=b+' · '+os})();
+
+/* ---------- gösterge ---------- */
+const CIRC=2*Math.PI*64;
+function setScore(v){v=Math.max(0,Math.min(100,Math.round(v)));
+const p=$('#gaugePanel'),g=$('#gFg'),num=$('#gNum'),lab=$('#gaugeLabel');
+let col,label;
+if(v<25){col='var(--green)';label='DÜŞÜK İZ'}else if(v<50){col='var(--cyan)';label='ORTA İZ'}else if(v<75){col='var(--amber)';label='YÜKSEK İZ'}else{col='var(--red)';label='KRİTİK İZ'}
+p.style.setProperty('--gcol',col);lab.textContent=label;lab.style.color=col;
+g.style.strokeDashoffset=CIRC*(1-v/100);
+const from=state.score;state.score=v;const t0=performance.now();
+(function step(t){const k=Math.min(1,(t-t0)/700);num.textContent=Math.round(from+(v-from)*k);if(k<1)requestAnimationFrame(step)})(t0);
+}
+
+/* ---------- delil kartları ---------- */
+function addEvidence(o){
+if(!state.F)state.F={ev:{}};
+const el=document.createElement('article');el.className='ev-card';
+const rcol={low:'var(--green)',med:'var(--amber)',high:'var(--red)'}[o.risk]||'var(--dim)';
+el.style.setProperty('--acc',rcol);
+el.innerHTML='<div class="ev-top"><span class="ev-chip mono">'+o.chip+'</span><span class="ev-name">'+esc(o.name)+'</span><span class="ev-st">bulundu</span></div>'
+ +'<p class="ev-det">'+esc(o.detail)+'</p>'
+ +'<div class="ev-bot"><span>'+((o.count>0)?o.count+' kayıt':'boş')+'</span><span>'+fmtBytes(o.size)+'</span></div>';
+$('#evGrid').appendChild(el);EV[o.id]=el;
+state.F.ev[o.id]={count:o.count,size:o.size||0,cleans:!!o.cleans};
+$('#evWrap').hidden=false;
+$('#evCount').textContent=Object.keys(state.F.ev).length+' kategori';
+requestAnimationFrame(()=>requestAnimationFrame(()=>el.classList.add('in')));
+updateStats();
+}
+function updateStats(){if(!state.F)return;let n=0,sz=0,cl=0;
+for(const k in state.F.ev){const e=state.F.ev[k];n+=e.count;sz+=e.size||0;if(e.cleans&&e.count>0)cl++}
+$('#stItems').textContent=n;$('#stSize').textContent=fmtBytes(sz);$('#stClean').textContent=cl?cl+' kategori':'—'}
+function setEv(id,count,detail,stat){const el=EV[id];if(!el||!state.F||!state.F.ev[id])return;
+state.F.ev[id].count=count;
+el.querySelector('.ev-bot span').textContent=count>0?count+' kayıt':'boş';
+if(detail)el.querySelector('.ev-det').textContent=detail;
+const st=el.querySelector('.ev-st');st.textContent=stat;st.className='ev-st '+((stat==='sıfırlandı')?'ok':(stat==='kısmen'?'warn':''));
+updateStats()}
+
+/* ---------- parmak izi ölçümü ---------- */
+function canvasFP(){try{const c=document.createElement('canvas');c.width=240;c.height=60;const x=c.getContext('2d');
+x.textBaseline='top';x.font='16px Arial';x.fillStyle='#f60';x.fillRect(125,1,62,3);
+x.fillStyle='#ffa';x.fillText('sifriz-canvas-parmak-iz-testi-1234567890',4,12);
+x.font='23px Georgia';x.fillStyle='#fe6';x.fillText('sifriz-ayak-izi',4,35);
+return hashStr(c.toDataURL())}catch(e){return 'ölçülemedi'}}
+function detectFonts(){const fonts=['Arial','Arial Black','Book Antiqua','Bookman Old Style','Bradley Hand','Candara','Comic Sans MS','Consolas','Constantia','Corbel','Courier New','Futura','Georgia','Gill Sans','Impact','Lucida Console','Palatino Linotype','Segoe UI','Tahoma','Times New Roman','Trebuchet MS','Verdana'];
+const c=document.createElement('canvas');c.width=300;c.height=60;const x=c.getContext('2d');const s='mmmmmmmmmmmm';
+x.font='48px monospace';const w0=x.measureText(s).width;let n=0;
+fonts.forEach(f=>{x.font='48px '+f;if(Math.abs(x.measureText(s).width-w0)>0.5)n++});
+return{n,total:fonts.length}}
+function webglInfo(){const o={vendor:'—',renderer:'—'};try{const c=document.createElement('canvas');
+const gl=c.getContext('webgl')||c.getContext('experimental-webgl');if(!gl)return o;
+const ext=gl.getExtension('WEBGL_debug_renderer_info');
+o.vendor=gl.getParameter(ext?ext.VENDOR:gl.VENDOR);
+o.renderer=ext?gl.getParameter(ext.UNMASKED_RENDERER_WEBGL)||gl.getParameter(gl.RENDERER):gl.getParameter(gl.RENDERER);
+return o}catch(e){return o}}
+async function permStatus(){const out={};if(!navigator.permissions)return out;
+for(const[k,n]of[['geo','geolocation'],['cam','camera'],['mic','microphone']]){
+try{out[k]=(await navigator.permissions.query({name:n})).state}catch(e){out[k]='—'}}return out}
+
+function renderSignals(s){const grid=$('#sigGrid');grid.innerHTML='';
+const pTxt='konum:'+(s.perm.geo||'—')+' · kamera:'+(s.perm.cam||'—')+' · mikrofon:'+(s.perm.mic||'—');
+const pv=Object.values(s.perm);
+const pRisk=!pv.length?'low':pv.every(x=>x==='denied')?'low':pv.some(x=>x==='granted')?'high':'med';
+const cards=[
+['Canvas parmak izi',s.canvas,'high','Site, canvas çizim farklarını ölçerek tarayıcına benzersiz bir numara üretir.'],
+['User Agent',s.ua,'high','Tarayıcı adı, sürümü ve işletim sistemi her istekte açıkça gönderilir.'],
+['Font envanteri',s.fonts.n+' / '+s.fonts.total+' font tanınabilir',s.fonts.n>12?'high':'med','Yüklü fontlar genişliğinden ölçülerek profiline dahil edilir.'],
+['WebGL kimliği',s.webgl.renderer||'—','med','Ekran kartı + sürücü imzası; 3B sitelerinde güçlü ayırt edici.'],
+['Ekran',s.screen,'med','Çözünürlük, renk derinliği ve piksel oranı kombinasyonu.'],
+['Zaman dilimi',s.tz,'med','Bulunduğun coğrafyayı dar bir kümeye indirger.'],
+['Dil tercihleri',s.lang,'low','Tek başına zayıf; diğer sinyallerle birleşince güçlü.'],
+['Donanım ipuçları',s.hw,'low','Çekirdek sayısı ve platform — düşük çözünürlüklü ama sabittir.'],
+['İzin durumu',pTxt,pRisk,'Konum / kamera / mikrofon izni hali. "Asla" cevabı riski düşürür.'],
+['DNT & Pil API','DNT: '+s.dnt+' · Pil: '+(s.battery?'erişilebilir':'kapalı'),'low','Do-Not-Track çoğu site için dekoratif; Pil API enerji durumunu sızdırabilir.']];
+cards.forEach((c,i)=>{const el=document.createElement('div');el.className='sig-card';el.style.transitionDelay=(i*45)+'ms';
+el.innerHTML='<div class="sig-top"><span class="sig-name">'+c[0]+'</span><span class="risk '+c[2]+'">'+RISK_TR[c[2]]+'</span></div>'
+ +'<p class="sig-val">'+esc(c[1])+'</p><small>'+c[3]+'</small>';
+grid.appendChild(el);requestAnimationFrame(()=>requestAnimationFrame(()=>el.classList.add('in')))});
+}
+
+/* ---------- TARAMA ---------- */
+async function scan(){
+if(state.busy)return;state.busy=true;
+$('#btnScan').disabled=true;$('#sysState').textContent='TARANIYOR';
+const radar=$('#radar');radar.classList.remove('idle');radar.classList.add('scan');
+logEl.innerHTML='';state.F={ev:{}};state.sig=null;Object.keys(EV).forEach(k=>delete EV[k]);
+$('#evGrid').innerHTML='';$('#evWrap').hidden=true;$('#stamp').classList.remove('show');
+$('#stSig').textContent='—';updateStats();
+log('sys','oturum: '+(location.host||'yerel dosya')+' — '+D.b+' / '+D.os);await sleep(320);
+
+log('sys','çerez taranıyor…');await sleep(380);
+const ck=document.cookie?document.cookie.split(';').map(s=>s.trim()).filter(Boolean):[];
+const ckn=ck.length,ckBytes=document.cookie.length;
+const names=ck.slice(0,5).map(c=>c.split('=')[0]).join(', ');
+addEvidence({id:'cookie',chip:'ÇR',name:'Çerezler (erişilebilir)',detail:ckn?names+(ckn>5?' +'+(ckn-5)+' daha':''):'Bu oturumda okunabilir çerez yok',count:ckn,size:ckBytes*2,risk:ckn>12?'high':ckn>4?'med':'low',cleans:true});
+log(ckn>4?'warn':'ok',ckn+' çerez bulundu'+(ckn?' — '+names.slice(0,44):''));
+
+log('sys','yerel & oturum depoları taranıyor…');await sleep(340);
+let lsN=0,lsB=0;try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);lsN++;lsB+=(k.length+(localStorage.getItem(k)||'').length)*2}}catch(e){}
+const lsTop=Array.from({length:Math.min(3,lsN)},(_,i)=>{try{return localStorage.key(i)}catch(e){return''}}).filter(Boolean).join(', ');
+addEvidence({id:'ls',chip:'YD',name:'Yerel Depolama',detail:lsN?lsTop+(lsN>3?' …':''):'Boş',count:lsN,size:lsB,risk:lsN>10?'high':lsN>3?'med':'low',cleans:true});
+let ssN=0;try{ssN=sessionStorage.length}catch(e){}
+addEvidence({id:'ss',chip:'OT',name:'Oturum Depolaması',detail:ssN?''+ssN+' anahtar (sekme kapanınca düşer)':'Boş',count:ssN,size:null,risk:ssN>5?'med':'low',cleans:true});
+function ok2(x){return x>10?'warn':(x>0?'sys':'ok')}
+log(ok2(lsN+ssN),'yerel:'+lsN+' · oturum:'+ssN+' kayıt');
+
+await sleep(260);
+let idbN=0;
+if(window.indexedDB&&indexedDB.databases){
+try{const dbs=await indexedDB.databases();idbN=dbs.length;
+addEvidence({id:'idb',chip:'İD',name:'IndexedDB Veritabanları',detail:idbN?dbs.map(d=>d.name).join(', '):'Kayıtlı veritabanı yok',count:idbN,size:null,risk:idbN>2?'high':idbN?'med':'low',cleans:true});
+log(idbN?'sys':'ok','IndexedDB: '+idbN+' veritabanı')}
+catch(e){log('warn','IndexedDB listelenemedi')}}
+else log('warn','IndexedDB listesi bu tarayıcıda desteklenmiyor');
+
+let cacheN=0;
+if(window.caches){await sleep(240);
+try{const ks=await caches.keys();cacheN=ks.length;
+addEvidence({id:'cache',chip:'ÖN',name:'Önbellek Depoları',detail:cacheN?ks.map(k=>k).join(', '):'Kayıtlı önbellek yok',count:cacheN,size:null,risk:cacheN>2?'med':'low',cleans:true});
+log(cacheN?'sys':'ok','Cache Storage: '+cacheN)}catch(e){}}
+else log('warn','Cache Storage bu bağlamda kullanılamıyor');
+
+let swN=0;
+if(navigator.serviceWorker){try{swN=(await navigator.serviceWorker.getRegistrations()).length}catch(e){}}
+addEvidence({id:'sw',chip:'SW',name:'Servis İşleyiciler',detail:swN?swN+' kayıt (çevrimdışı kabiliyet + iz)':'Kayıtlı SW yok',count:swN,size:null,risk:swN?'med':'low',cleans:true});
+
+let est=null;try{if(navigator.storage&&navigator.storage.estimate)est=await navigator.storage.estimate()}catch(e){}
+addEvidence({id:'quota',chip:'KO',name:'Depolama Kotası',detail:est?'kullanımda '+fmtBytes(est.usage||0)+' · kullanılabilir '+fmtBytes(est.quota||0):'desteklenmiyor',count:0,size:null,risk:'low',cleans:false});
+await sleep(260);
+
+log('sys','parmak izi sinyalleri ölçülüyor…');await sleep(420);
+const sig={canvas:canvasFP(),ua:navigator.userAgent,fonts:detectFonts(),webgl:webglInfo(),
+screen:screen.width+'×'+screen.height+' · '+screen.colorDepth+'-bit · DPR '+window.devicePixelRatio,
+tz:((()=>{try{return Intl.DateTimeFormat().resolvedOptions().timeZone}catch(e){return navigator.timeZone||'—'}}))(),
+lang:(navigator.languages||[navigator.language]).join(', '),
+hw:(navigator.hardwareConcurrency||'?')+' çekirdek · '+(navigator.platform||'—'),
+perm:await permStatus(),
+dnt:navigator.doNotTrack==='1'?'açık':'kapalı',
+battery:('getBattery' in navigator)};
+state.sig=sig;renderSignals(sig);$('#stSig').textContent='10 sinyal';
+log('sys','10 sinyal ölçüldü → MODÜL 02 güncellendi');await sleep(260);
+
+let sc=4;
+sc+=Math.min(18,ckn*2)+Math.min(12,lsN);
+sc+=(ssN>0?4:0)+(idbN?5:0)+(cacheN?4:0)+(swN?3:0);
+let fp=10+8+(sig.fonts.n>12?6:3)+4+3+3+2+2;
+if(sig.dnt==='kapalı')fp+=2;
+state.fpScore=fp;sc+=fp;sc=Math.min(97,sc);
+setScore(sc);
+log('ok','tarama tamam — risk skoru: '+sc+'/100');
+radar.classList.remove('scan');radar.classList.add('idle');
+state.busy=false;$('#btnScan').disabled=false;
+$('#btnClean').disabled=false;$('#btnReport').disabled=false;
+$('#sysState').textContent='SKOR '+sc;
+}
+
+/* ---------- SIFIRLAMA ---------- */
+let lastFocus=null;
+function openModal(){lastFocus=document.activeElement;$('#modal').classList.add('open');$('#mCancel').focus()}
+function closeModal(){$('#modal').classList.remove('open');const t=lastFocus;lastFocus=null;if(t&&t.isConnected&&!t.disabled)t.focus()}
+async function doClean(){
+closeModal();if(state.busy)return;state.busy=true;
+$('#btnScan').disabled=true;$('#btnClean').disabled=true;
+log('bad','— SIFIRLAMA BAŞLADI —');await sleep(300);
+const ck=document.cookie?document.cookie.split(';').map(s=>s.trim()).filter(Boolean):[];
+ck.forEach(c=>{const n=c.split('=')[0];if(!n)return;
+const exp='expires=Thu, 01 Jan 1970 00:00:00 GMT';
+document.cookie=n+'=;'+exp+';path=/';
+document.cookie=n+'=;'+exp;});
+log('ok','çerezler süresi geçirildi ('+ck.length+')');await sleep(260);
+try{localStorage.clear();log('ok','yerel depolama boşaltıldı')}catch(e){}await sleep(220);
+try{sessionStorage.clear();log('ok','oturum depolaması boşaltıldı')}catch(e){}await sleep(220);
+if(window.indexedDB&&indexedDB.databases){
+try{const dbs=await indexedDB.databases();dbs.forEach(d=>{try{indexedDB.deleteDatabase(d.name)}catch(e){}});
+log('ok','IndexedDB veritabanları kaldırıldı ('+dbs.length+')')}catch(e){}}
+await sleep(260);
+if(window.caches){
+try{const ks=await caches.keys();for(const k of ks){try{await caches.delete(k)}catch(e){}}
+log('ok','önbellek depoları silindi ('+ks.length+')')}catch(e){}}
+await sleep(260);
+if(navigator.serviceWorker){
+try{const rs=await navigator.serviceWorker.getRegistrations();for(const r of rs){await r.unregister()}
+if(rs.length)log('ok','servis işleyiciler kayıttan çıkarıldı')}catch(e){}}
+await sleep(280);
+log('warn','not: HttpOnly çerezler silemedi — tarayıcı Ayarlar → Gizlilik → Sitelerden');
+await sleep(320);
+
+const ckNow=document.cookie?document.cookie.split(';').filter(s=>s.trim()).length:0;
+setEv('cookie',ckNow,ckNow?ckNow+' çerez kaldı (HttpOnly)':'Bu oturumda okunabilir çerez yok',ckNow?'kısmen':'sıfırlandı');
+setEv('ls',0,'Boş','sıfırlandı');setEv('ss',0,'Boş','sıfırlandı');
+setEv('idb',0,'Kayıtlı veritabanı yok','sıfırlandı');
+setEv('cache',0,'Kayıtlı önbellek yok','sıfırlandı');setEv('sw',0,'Kayıtlı SW yok','sıfırlandı');
+let lsN=0;try{lsN=localStorage.length}catch(e){}
+
+const rem=Math.min(97,4+Math.min(18,ckNow*2)+Math.min(12,lsN)+state.fpScore);
+setScore(rem);
+$('#stampDate').textContent=new Date().toLocaleDateString('tr-TR');
+$('#stamp').classList.add('show');
+log('ok','sıfırlama tamam — kalan risk '+rem+'/100 (sinyaller yazılım kaynaklı)');
+gLoad();gRender();
+state.busy=false;$('#btnScan').disabled=false;$('#sysState').textContent='SKOR '+rem;
+}
+
+/* ---------- RAPOR ---------- */
+function makeReport(){
+if(!state.F||!state.sig)return;
+const ev=Object.entries(state.F.ev).map(([k,e])=>({kalem:k,adet:e.count,boyut:e.size?fmtBytes(e.size):null}));
+const ts=new Date().toISOString().slice(0,16).replace(/[-:T]/g,'');
+download('sifriz-rapor-'+ts+'.json',JSON.stringify({
+uygulama:'SIFIRİZ',zaman:new Date().toISOString(),
+tarayici:D.b,isletimSistemi:D.os,adres:location.href,
+riskSkoru:state.score,
+bulgular:ev,
+sinyaller:{canvasParmakIzi:state.sig.canvas,userAgent:state.sig.ua,fontlar:state.sig.fonts.n+'/'+state.sig.fonts.total,
+webgl:state.sig.webgl,ekran:state.sig.screen,zamanDilimi:state.sig.tz,diller:state.sig.lang,donanım:state.sig.hw,
+izinler:state.sig.perm,dnt:state.sig.dnt,pilApi:state.sig.battery},
+not:'Bu rapor tarayıcında üretildi; harici hiçbir sunucuya gönderilmedi.'},null,2),'application/json');
+log('ok','rapor indirildi — sifriz-rapor-'+ts+'.json');
+}
+
+/* ---------- KILAVUZ ---------- */
+const GUIDE=[
+{id:'google',label:'Google',items:[
+{t:'Arama geçmişi + Kişiselleştirme',d:'"Tüm zamanlar" seç, İnternet & Arama geçmişi kutuları işaretli olsun.',l:'myactivity.google.com',u:'https://myactivity.google.com/',m:'3 dk'},
+{t:'Reklam kişiselleştirmesini kapat',d:'Görüntülü reklamlar profilinden çık; ayarlar sıfırlanır.',l:'adssettings.google.com',u:'https://adssettings.google.com/',m:'2 dk'},
+{t:'Takeout ile saklanan her şeyi indir',d:'Bir kez indir, arşivle; sonraki dökümlerde farkı gör.',l:'takeout.google.com',u:'https://takeout.google.com/',m:'5 dk'},
+{t:'YouTube izleme geçmişini temizle',d:'Tümünü sil + önerileri kişiselleştirme kapat.',l:'youtube.com/history',u:'https://www.youtube.com/history',m:'3 dk'},
+{t:'Harita & konum geçmişi',d:'Konum Geçmişi kapalı olsa bile eski noktalar birikir.',l:'myactivity.google.com/locations',u:'https://myactivity.google.com/locations',m:'5 dk'},
+{t:'Gmail otomatik arşivleme',d:'Ayarlar → Görünümler & Yığınlar → 2 yıl/3 ay otomatik arşiv filtresi.',l:'mail.google.com',u:'https://mail.google.com/',m:'4 dk'}]},
+{id:'sosyal',label:'Sosyal Medya',items:[
+{t:'Meta Verilerin: FB + IG kayıtları',d:'Her uygulamada "Verileri indir"; reklam ayarları sıfırlanır.',l:'facebook.com/help (Verilerin)',u:'https://www.facebook.com/help/568137413302267',m:'10 dk'},
+{t:'Meta reklam tercihlerini sıfırla',d:'İlgiler, işveren/okul bağlantıları, paylaşılan e-posta.',l:'facebook.com/ads/preferences',u:'https://www.facebook.com/ads/preferences',m:'3 dk'},
+{t:'X: veri indir + reklam kişiselleştirmesini kapat',d:'Ayarlar → Hesap → Veri ve reklam ayarları.',l:'x.com/settings',u:'https://x.com/settings',m:'5 dk'},
+{t:'TikTok: veri indirme + profil kapatma',d:'Ayarlar → Gizlilik → Veri indirme; reklamlara dayalı profili kapat.',l:'tiktok.com',u:'https://www.tiktok.com/',m:'5 dk'},
+{t:'LinkedIn: veri isteği + gizli profil',d:'Ziyaret görünürlüğü "Gizli" yap; hesap verisi talebini gönder.',l:'linkedin.com/settings',u:'https://www.linkedin.com/settings/',m:'5 dk'},
+{t:'Kullanmadığın platformların hesabını sil',d:'Sessiz hesap bile profil + etkileşim veritabanında yaşar.',l:'platform destek merkezleri',u:'https://help.x.com/',m:'5 dk'}]},
+{id:'arama',label:'Arama & Web',items:[
+{t:'Tarayıcı geçmiş + önbellek + çerez (genel)',d:'Ctrl+Shift+Del → Tüm zamanlar → Geçmiş, Önbellek, Çerez. HttpOnly dahil gider.',l:'tarayıcı kısayolu',u:'#',m:'2 dk'},
+{t:'Gizlilik dostu arama motoruna geç',d:'Startpage / DuckDuckGo: aramalarını dev profillemeye yedirme.',l:'startpage.com',u:'https://www.startpage.com/',m:'1 dk'},
+{t:'DNS seviyesinde filtre dene',d:'Cihaz/DNS katmanında izleyici alan adlarını ke (Pi-hole, AdGuard DNS).',l:'adguard.com',u:'https://adguard.com/en/adguard-dns/overview.html',m:'15 dk'},
+{t:'Google\'dan "Özünü unutturma" (TR)',d:'Adınla çıkan sonuçları arama listesinden kaldırma formu.',l:'google.com.tr/sorry/1',u:'https://www.google.com.tr/sorry/1',m:'10 dk'}]},
+{id:'ticaret',label:'E-ticaret & Uygulama',items:[
+{t:'Amazon: tüm verini indir',d:'Sipariş, adres, profil — zip dökümü; saklananları kendi gözünle gör.',l:'data.amazon.com/your-data',u:'https://data.amazon.com/your-data',m:'5 dk'},
+{t:'Trendyol: reklam profili + hesap kapatma',d:'Ayarlar → KVKK; destekten "reklam izlerimi temizle" talebini yaz.',l:'trendyol.com',u:'https://www.trendyol.com/',m:'10 dk'},
+{t:'Hepsiburada: aynı işlem',d:'KVKK başvurusu + hesap kapatma; reklam profilini temizlet.',l:'hepsiburada.com',u:'https://www.hepsiburada.com/',m:'10 dk'},
+{t:'Uygulama izinlerini gözden geçir',d:'Telefon: Ayarlar → Uygulamalar → konum/mikrofon/kısa mesaj → "bir kez sor".',l:'cihaz ayarları',u:'#',m:'5 dk'},
+{t:'Misafir modunu tercih et',d:'Alışverişe oturum açmadan gir; oturum = profil + çerez karması.',l:'',u:'#',m:'—'}]},
+{id:'yasal',label:'KVKK & Yasal',items:[
+{t:'KVKK başvuru kanallarını bil',d:'Erişim, silme, düzeltme, durdurma. Başvuru: e-Devlet, KEP veya yazılı.',l:'kvkkbasvuru.gov.tr',u:'https://kvkkbasvuru.gov.tr/',m:'1 dk'},
+{t:'Silme (mağduriyet) talebi yaz',d:'6698 s. KVKK m.7\'ye dayanarak veri sorumlusuna talep; 30 gün içinde yanıt zorunlu.',l:'kvkk.gov.tr',u:'https://www.kvkk.gov.tr/',m:'10 dk'},
+{t:'AB servislerinde GDPR m.17',d:'EU adresli her şirket "erasure request" e-postası alır; şablonu destek sayfalarında.',l:'gdpr.eu',u:'https://gdpr.eu/',m:'10 dk'},
+{t:'Yanıt gelmezse: Kurul\'a şikâyet',d:'30 gün içinde yanıt yoksa veya olumsuzsa Kurul başvurusu; 6 ay dava süresi.',l:'kvkk.gov.tr',u:'https://www.kvkk.gov.tr/',m:'—'}]}
+];
+let gState={},activeCat='google';
+function gLoad(){try{gState=JSON.parse(localStorage.getItem('sifriz_kilavuz_v1'))||{}}catch(e){gState={}}
+GUIDE.forEach(c=>{if(!Array.isArray(gState[c.id]))gState[c.id]=c.items.map(()=>false)})}
+function gSave(){try{localStorage.setItem('sifriz_kilavuz_v1',JSON.stringify(gState))}catch(e){}}
+function gProg(){let a=0,b=0;GUIDE.forEach(c=>{a+=gState[c.id].filter(Boolean).length;b+=c.items.length});
+$('#gpBar').style.width=(b?a/b*100:0)+'%';$('#gpTxt').textContent=a+'/'+b+' adım tamamlandı';$('#gpPct').textContent=Math.round(b?a/b*100:0)+'%'}
+function gRender(){
+$('#tabs').innerHTML=GUIDE.map(c=>{const d=gState[c.id].filter(Boolean).length;
+return '<button class="vtab '+(c.id===activeCat?'on':'')+'" data-cat="'+c.id+'" role="tab"><span>'+c.label+'</span><i>'+d+'/'+c.items.length+'</i></button>'}).join('');
+const c=GUIDE.find(x=>x.id===activeCat);
+$('#steps').innerHTML=c.items.map((s,i)=>{const done=gState[c.id][i];
+const link=(s.u&&s.u!=='#')?'<a class="sl" href="'+s.u+'" target="_blank" rel="noopener">'+s.l+' ↗</a>':(s.l?'<span class="sl fake">'+s.l+'</span>':'<span></span>');
+return '<label class="step '+(done?'done':'')+'"><input type="checkbox" data-c="'+c.id+'" data-i="'+i+'" '+(done?'checked':'')+'><span class="bx"></span><span class="stx"><b>'+s.t+'</b>'+(s.d?'<small>'+s.d+'</small>':'')+'</span>'+link+'<span class="stm">'+(s.m||'')+'</span></label>'}).join('');
+gProg()}
+$('#tabs').addEventListener('click',e=>{const t=e.target.closest('.vtab');if(!t)return;activeCat=t.dataset.cat;gRender()});
+$('#steps').addEventListener('change',e=>{const c=e.target.closest('input');if(!c)return;
+gState[c.dataset.c][+c.dataset.i]=c.checked;gSave();
+c.closest('.step').classList.toggle('done',c.checked);
+const tab=document.querySelector('.vtab[data-cat="'+c.dataset.c+'"] i');
+if(tab)tab.textContent=gState[c.dataset.c].filter(Boolean).length+'/'+GUIDE.find(x=>x.id===c.dataset.c).items.length;
+gProg()});
+
+/* ---------- olaylar ---------- */
+$('#btnScan').addEventListener('click',scan);
+$('#btnClean').addEventListener('click',openModal);
+$('#mCancel').addEventListener('click',closeModal);
+$('#modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
+$('#modal').addEventListener('keydown',e=>{
+ if(e.key!=='Tab'||!$('#modal').classList.contains('open'))return;
+ const f=[$('#mCancel'),$('#mOk')];const i=f.indexOf(document.activeElement);
+ e.preventDefault();const n=e.shiftKey?(i<=0?f.length-1:i-1):(i===f.length-1?0:i+1);f[n].focus()
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+$('#mOk').addEventListener('click',doClean);
+$('#btnReport').addEventListener('click',makeReport);
+
+if('IntersectionObserver' in window){
+ const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+ $$('.rev').forEach(el=>io.observe(el));
+}else{$$('.rev').forEach(el=>el.classList.add('in'))}
+
+gLoad();gRender();
+
+/* ---------- 00 DIŞ ARAMA ---------- */
+(function(){
+  const form=document.getElementById('osintForm');
+  const result=document.getElementById('osResult');
+  const groups=document.getElementById('osGroups');
+  const btnS=document.getElementById('btnOsSearch');
+  const btnC=document.getElementById('btnOsClear');
+  if(!form||!result||!groups||!btnS||!btnC) return;
+
+  const enc=encodeURIComponent;
+  const g=q=>'https://www.google.com/search?q='+enc(q);
+  const ddg=q=>'https://duckduckgo.com/?q='+enc(q);
+  const bing=q=>'https://www.bing.com/search?q='+enc(q);
+
+  const link=(t,h,tip)=>'<a class="os-link" href="'+h+'" target="_blank" rel="noopener"'+(tip?' title="'+esc(tip)+'"':'')+'><small>'+esc(t)+'</small></a>';
+  const grp=(t,links,note)=>'<div class="os-group"><h4>'+esc(t)+'</h4><div class="os-links">'+links.join('')+'</div>'+(note?'<div class="os-note">'+esc(note)+'</div>':'')+'</div>';
+
+  function phones(v){
+    const raw=v.trim();
+    if(!raw) return [];
+    let d=raw.replace(/\D/g,'');
+    if(d.length===12 && d.startsWith('90')) d=d.slice(2);
+    if(d.length===11 && d.startsWith('90')) d=d.slice(2);
+    if(d.length===11 && d.startsWith('0')) d=d.slice(1);
+    if(!/^\d{10}$/.test(d)) return [raw];
+    const a=d.slice(0,3),b=d.slice(3,6),c=d.slice(6,8),e2=d.slice(8);
+    return ['+90 '+a+' '+b+' '+c+' '+e2,'0'+a+' '+b+' '+c+' '+e2,d,'0'+d].filter((x,i,arr)=>arr.indexOf(x)===i);
+  }
+
+  function emails(v){
+    const e=v.trim().toLowerCase();
+    if(!e) return [];
+    const idx=e.lastIndexOf('@');
+    if(idx<1) return [e];
+    const local=e.slice(0,idx),domain=e.slice(idx+1);
+    const out=[e];
+    if(/^(gmail|googlemail)\.com$/i.test(domain)){
+      const noDot=local.replace(/\./g,'');
+      if(noDot&&noDot!==local) out.push(noDot+'@'+domain);
+      const plus=local.split('+');
+      if(plus.length>1&&plus[0]) out.push(plus[0]+'@'+domain);
+      if(domain==='gmail.com') out.push(local+'@googlemail.com');
+      if(domain==='googlemail.com') out.push(local+'@gmail.com');
+    }
+    return [...new Set(out)].slice(0,8);
+  }
+
+  function socialLinks(user){
+    const u=user.replace(/\s+/g,'');
+    if(!u) return [];
+    const q='"'+u+'"';
+    const qAt='"@'+u+'"';
+    return [
+      link('Google: @'+u,g(qAt+' OR '+q)),
+      link('DuckDuckGo: @'+u,ddg(qAt+' OR '+q)),
+      link('Bing: @'+u,bing(qAt+' OR '+q)),
+      link('Instagram arama',g(q+' site:instagram.com')),
+      link('Instagram profil','https://www.instagram.com/'+enc(u)+'/','Yanlış hesap olabilir; profil değilse arama kullan.'),
+      link('Facebook arama',g(q+' site:facebook.com')),
+      link('X arama',g(q+' site:x.com OR site:twitter.com')),
+      link('X profil','https://x.com/'+enc(u),'Yanlış hesap olabilir.'),
+      link('TikTok arama',g(q+' site:tiktok.com')),
+      link('TikTok profil','https://www.tiktok.com/@'+enc(u),'Yanlış hesap olabilir.'),
+      link('LinkedIn arama',g(q+' site:linkedin.com')),
+      link('GitHub arama',g(q+' site:github.com')),
+      link('Reddit arama',g(q+' site:reddit.com')),
+      link('Telegram arama',g(q+' site:t.me')),
+      link('YouTube arama',g(q+' site:youtube.com'))
+    ];
+  }
+
+  function build(){
+    const phone=document.getElementById('osPhone').value.trim();
+    const email=document.getElementById('osEmail').value.trim();
+    let user=document.getElementById('osUser').value.trim();
+    if(!user&&email) user=email.split('@')[0].replace(/\+/g,'');
+    user=user.replace(/^@/,'');
+
+    const arr=[],general=[],idList=[];
+
+    if(phone) idList.push({label:'Telefon',variants:phones(phone)});
+    if(email) idList.push({label:'E-posta',variants:emails(email)});
+    if(user) idList.push({label:'Kullanıcı adı',variants:[user,'@'+user]});
+
+    if(!idList.length){result.classList.remove('on');groups.innerHTML='';return;}
+
+    idList.forEach(id=>{
+      id.variants.slice(0,3).forEach(v=>{
+        if(!v) return;
+        general.push(link('Google: '+id.label+' '+v,g('"'+v+'"')));
+        general.push(link('DuckDuckGo: '+v,ddg('"'+v+'"')));
+        general.push(link('Bing: '+v,bing('"'+v+'"')));
+      });
+    });
+    arr.push(grp('Genel arama',general,'Linkler yeni sekmede açılır; bu sayfa arama sonucunu çekmez.'));
+
+    if(phone){
+      const p=phones(phone),pl=[];
+      p.forEach(v=>pl.push(link('Google: '+v,g('"'+v+'" OR "'+v.replace(/\D/g,'')+'"'))));
+      pl.push(link('Sosyal ağlarda telefon',g(p[0]+' site:instagram.com OR site:facebook.com OR site:x.com OR site:tiktok.com OR site:linkedin.com')));
+      arr.push(grp('Telefon varyantları',pl,'Uluslararası, ulusal ve ham numara formatları.'));
+    }
+
+    if(email){
+      const e=emails(email),el=[];
+      e.forEach(v=>el.push(link('Google: '+v,g('"'+v+'"'))));
+      const local=email.split('@')[0];
+      el.push(link('E-posta local adı',g('"'+local+'"')));
+      el.push(link('E-posta sosyal arama',g('"'+email+'" site:instagram.com OR site:facebook.com OR site:x.com OR site:tiktok.com')));
+      arr.push(grp('E-posta / Gmail varyantları',el,'Gmail\'de nokta farkları, plus adresleri ve googlemail benzerlikleri ayrı hesap/arama yaratabilir.'));
+    }
+
+    if(user){
+      arr.push(grp('Kullanıcı adı / sosyal medya',socialLinks(user),'Doğrudan profil linkleri yanlış kullanıcıyı açabilir; "site:" araması daha güvenlidir.'));
+    }
+
+    groups.innerHTML=arr.join('');
+    result.classList.add('on');
+  }
+
+  form.addEventListener('submit',e=>{e.preventDefault();build();});
+  btnS.addEventListener('click',build);
+  btnC.addEventListener('click',()=>{form.reset();groups.innerHTML='';result.classList.remove('on');});
+})();
+</script>
+</body>
+</html>
